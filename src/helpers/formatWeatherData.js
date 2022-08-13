@@ -16,12 +16,11 @@ exports.formatWeatherData = (weatherData) => {
       description: weather[0].description,
     },
     temps: {
-      temp: main.temp,
-      temp_min: main.temp_min,
-      temp_max: main.temp_max,
-      pressure: main.pressure,
-      humidity: main.humidity
+      temp:`${main.temp} Cº`,
+      temp_min: `${main.temp_min} Cº`,
+      temp_max: `${main.temp_max} Cº`,
+      humidity: `${main.humidity} %`,
     },
-    wind_speed: wind.speed,
+    wind_speed: `${wind.speed} km/h`,
   };
 };

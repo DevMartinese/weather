@@ -40,13 +40,15 @@ exports.getForecastByLocation = async (req, res) => {
   try {
     if(req.params.city) {
       const getForecastByCityParam = await getForecastByCity(req.params.city);
-      return res.status(200).json(getForecastByCityParam);
+      const forecastParsed = formatForecastData(getForecastByCityParam);
+      return res.status(200).json(forecastParsed);
     }
     
     const getLocation = await getLocationByIp();
     const getForecast = await getForecastByCity(getLocation.city);
+    const forecastParsed = formatForecastData(getForecast);
 
-    return res.status(200).json(getForecast);
+    return res.status(200).json(forecastParsed);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
