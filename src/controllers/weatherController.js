@@ -1,11 +1,17 @@
 const { getLocationByIp } = require('../services/getLocationByIp');
 const { getWeatherByCity } = require('../services/getWeatherByCity');
 const { getForecastByCity } = require('../services/getForecastByCity');
+const { formatLocationData } = require('../helpers/formatLocationData');
+const { formatWeatherData } = require('../helpers/formatWeatherData');
+const { formatForecastData } = require('../helpers/formatForecastData');
 
 exports.getDataByLocation = async (req, res) => {
   try {
     const getLocation = await getLocationByIp();
-    return res.status(200).json(getLocation);
+
+    const locationParsed = formatLocationData(getLocation);
+
+    return res.status(200).json({country_data: locationParsed});
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -15,13 +21,15 @@ exports.getWeatherByLocation = async (req, res) => {
   try {
     if (req.params.city) {
       const getWeatherByCityParam = await getWeatherByCity(req.params.city);
-      return res.status(200).json(getWeatherByCityParam);
+      const wheaterParsed = formatWeatherData(getWeatherByCityParam);
+      return res.status(200).json(wheaterParsed);
     }
 
     const getLocation = await getLocationByIp();
     const getWeatherByLocation = await getWeatherByCity(getLocation.city);
 
-    return res.status(200).json(getWeatherByLocation);
+    const wheaterParsed = formatWeatherData(getWeatherByLocation);
+    return res.status(200).json(wheaterParsed);
   }
   catch (error) {
     res.status(500).json({ error: error.message });
