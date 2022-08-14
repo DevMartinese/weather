@@ -3,7 +3,7 @@ const app = require('../../index');
 const city = 'London';
 
 describe('Controller integration testing', () => {
-  it('should return data by location', async () => {
+  it('should return data by location with ipapi', async () => {
     await request(app).get('/v1/location')
       .set("Accept", "application/json")
       .expect("Content-Type", /json/)
