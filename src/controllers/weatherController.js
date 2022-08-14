@@ -9,9 +9,13 @@ exports.getDataByLocation = async (req, res) => {
   try {
     const getLocation = await getLocationByIp();
 
+    if (!getLocation) {
+      return res.status(404).json({ error: 'Location not found' });
+    }
+
     const locationParsed = formatLocationData(getLocation);
 
-    return res.status(200).json({country_data: locationParsed});
+    return res.status(200).json({ country_data: locationParsed });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -38,12 +42,12 @@ exports.getWeatherByLocation = async (req, res) => {
 
 exports.getForecastByLocation = async (req, res) => {
   try {
-    if(req.params.city) {
+    if (req.params.city) {
       const getForecastByCityParam = await getForecastByCity(req.params.city);
       const forecastParsed = formatForecastData(getForecastByCityParam);
       return res.status(200).json(forecastParsed);
     }
-    
+
     const getLocation = await getLocationByIp();
     const getForecast = await getForecastByCity(getLocation.city);
     const forecastParsed = formatForecastData(getForecast);

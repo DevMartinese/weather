@@ -26,8 +26,17 @@ describe('getDataByLocation', () => {
     await getDataByLocation(req, res);
     expect(res._getJSONData()).toEqual(mockResponseLocation);
     expect(res.statusCode).toBe(200);
-  }
-  );
+  });
+
+  it('should return error if location not found', async () => {
+    const req = createRequest();
+    const res = createResponse();
+    const location = null;
+    getLocationByIp.mockResolvedValue(location);
+    await getDataByLocation(req, res);
+    expect(res._getJSONData()).toEqual({ error: 'Location not found' });
+    expect(res.statusCode).toBe(404);
+  });
 
   it('should return error', async () => {
     const req = createRequest();

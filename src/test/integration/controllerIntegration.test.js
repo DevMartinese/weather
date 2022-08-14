@@ -1,6 +1,6 @@
 const request = require('supertest');
 const app = require('../../index');
-const city = 'London';
+const city = 'Buenos Aires';
 
 describe('Controller integration testing', () => {
   it('should return data by location with ipapi', async () => {
