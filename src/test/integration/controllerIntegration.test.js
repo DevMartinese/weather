@@ -2,7 +2,7 @@ const request = require('supertest');
 const app = require('../../index');
 const city = 'London';
 
-describe('getDataByLocation integration', () => {
+describe('Controller integration testing', () => {
   it('should return data by location', async () => {
     await request(app).get('/v1/location')
       .set("Accept", "application/json")
