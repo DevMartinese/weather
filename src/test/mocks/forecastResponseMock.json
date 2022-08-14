@@ -1,0 +1,47 @@
+[
+    {
+        "date": "2022-08-14 18:00:00",
+        "temp": "29.46 Cº",
+        "temp_min": "29.46 Cº",
+        "temp_max": "29.46 Cº",
+        "humidity": "22 %",
+        "description": "overcast clouds",
+        "main": "Clouds"
+    },
+    {
+        "date": "2022-08-15 18:00:00",
+        "temp": "27.87 Cº",
+        "temp_min": "27.87 Cº",
+        "temp_max": "27.87 Cº",
+        "humidity": "35 %",
+        "description": "overcast clouds",
+        "main": "Clouds"
+    },
+    {
+        "date": "2022-08-16 18:00:00",
+        "temp": "23 Cº",
+        "temp_min": "23 Cº",
+        "temp_max": "23 Cº",
+        "humidity": "51 %",
+        "description": "broken clouds",
+        "main": "Clouds"
+    },
+    {
+        "date": "2022-08-17 18:00:00",
+        "temp": "21.91 Cº",
+        "temp_min": "21.91 Cº",
+        "temp_max": "21.91 Cº",
+        "humidity": "59 %",
+        "description": "overcast clouds",
+        "main": "Clouds"
+    },
+    {
+        "date": "2022-08-18 18:00:00",
+        "temp": "22.5 Cº",
+        "temp_min": "22.5 Cº",
+        "temp_max": "22.5 Cº",
+        "humidity": "40 %",
+        "description": "overcast clouds",
+        "main": "Clouds"
+    }
+]
