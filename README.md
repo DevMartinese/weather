@@ -31,6 +31,16 @@ Esto nos levantara un esrvido en el puerto 4000 en nuestro localhost
 [nodemon] starting `node app.js`
 El servidor esta funcionando en el puerto 4000
 ```
+Ya que asi lo tenemos configurado en nuestro app.js
+
+```js
+const app = require('./src/index');
+const PORT = 4000
+
+app.listen(PORT, () => {
+  console.log(`El servidor esta funcionando en el puerto ${PORT}`);
+});
+```
 
 ## Testing
 
