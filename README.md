@@ -18,6 +18,22 @@ Con el siguiente comando el carpeta raiz del proyecto, se ejecuta nodemon, para 
 npm run start
 ```
 
+Esto nos levantara un esrvido en el puerto 4000 en nuestro localhost
+
+```bash
+> wheater@1.0.0 start
+> nodemon app.js
+
+[nodemon] 2.0.19
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node app.js`
+El servidor esta funcionando en el puerto 4000
+```
+
+## Testing
+
 Para correr los test, tanto unitarios como de integración ejecutar el siguiente siguiente comando en terminal
 
 ```bash
