@@ -24,7 +24,11 @@ Para correr los test, tanto unitarios como de integración ejecutar el siguiente
 npm run test
 ```
 
+Esto nos brindara una tabla para ver el coverage de los test en si 
+
 ```bash
+PASS  src/test/unit/controllerUnit.test.js
+PASS  src/test/integration/controllerIntegration.test.js
 ------------------------|---------|----------|---------|---------|-------------------
 File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ------------------------|---------|----------|---------|---------|-------------------
