@@ -8,11 +8,6 @@ const { formatForecastData } = require('../helpers/formatForecastData');
 exports.getDataByLocation = async (req, res) => {
   try {
     const getLocation = await getLocationByIp();
-
-    if (!getLocation) {
-      return res.status(404).json({ error: 'Location not found' });
-    }
-
     const locationParsed = formatLocationData(getLocation);
 
     return res.status(200).json({ country_data: locationParsed });
