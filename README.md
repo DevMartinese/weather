@@ -18,7 +18,7 @@ Con el siguiente comando el carpeta raiz del proyecto, se ejecuta nodemon, para 
 npm run start
 ```
 
-Esto nos levantara un esrvido en el puerto 4000 en nuestro localhost
+Esto nos levantara un servido en el puerto 4000 en nuestro localhost
 
 ```bash
 > wheater@1.0.0 start
